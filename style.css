@@ -1,0 +1,91 @@
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: rgb(210, 147, 65);
+    /* justify-content: stretch; */
+
+}
+.logo{
+    width: 120px;
+    height: 120px;
+}
+
+.nav-items{
+    /* background-color: brown; */
+    justify-content: stretch
+}
+.nav-items > ul
+{
+    display: flex;
+    padding: 10;
+    /* size: 100px; */
+    font-size: 26px;
+    /* background-color: antiquewhite; */
+
+    list-style: none;
+}
+
+.nav-items > ul > li{
+    padding: 15;
+    /* font-size: 20px; */
+}
+
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card{
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+}
+
+.res-card:hover{
+    border: 3px solid black;
+    border-color: rgb(197, 124, 50);
+    cursor: pointer;
+}
+
+.card-logo {
+    width: 100%;
+    height : 150px;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+}
+.search-box,.search-btn{
+    
+    margin: 10px 3px;
+    padding: 5px;
+        
+}
+.filter-btn
+{
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+.shimmer-container{
+    display: flex;
+}
+.login-btn{
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    background-color: green;
+}
+.shimmer-card{
+    width: 250px;
+    height: 300px;
+    margin: 5px;
+    padding:5px;
+    background-color: rgb(211, 209, 209);
+}
