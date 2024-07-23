@@ -3,12 +3,11 @@ import res_data from "../../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import useOnlineListener from "../../utils/useOnlineListener";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -31,7 +30,11 @@ const Body = () => {
     );
     console.log(listOfRestaurants);
   };
+  const onlineStatus = useOnlineListener();
 
+  if (onlineStatus === "offline") {
+    return <div>You are offline</div>;
+  }
   if (listOfRestaurants.length === 0) {
     return <Shimmer />;
   }

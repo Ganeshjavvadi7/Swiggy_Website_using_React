@@ -106,3 +106,13 @@
 .contact{
     background-color: rgb(163, 237, 165);
 }
+
+.user{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+Link{
+    text-decoration: none;
+}
