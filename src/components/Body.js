@@ -16,7 +16,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4400802&lng=78.3489168&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await data.json();
-
+    console.log("In Body");
     console.log(jsonData);
     console.log(
       jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
@@ -41,16 +41,17 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex space-x-5">
+        <div className="p-2 space-x-2">
           <input
             type="text"
-            className="search-box"
+            className="border-2 border-black rounded-md"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           ></input>
+
           <button
-            className="search-btn"
+            className="border-2 bg-gray-400 px-4 rounded-lg"
             onClick={() => {
               console.log(searchText);
               let newfilteredRestaurants = listOfRestaurants.filter((res) =>
@@ -64,7 +65,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="bg-gray-400 px-2 m-2 rounded-lg"
           onClick={() => {
             console.log("Button Clicked");
             const updatedResList = listOfRestaurants.filter(
@@ -78,7 +79,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((res) => (
           <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
             <RestaurantCard resdata={res} />
